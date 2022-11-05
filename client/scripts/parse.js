@@ -14,7 +14,9 @@ var Parse = {
       type: 'POST',
       data: JSON.stringify(message),
       contentType: 'application/json',
-      success: successCB,
+      success: successCB || function(success) {
+        console.log('chatterbox: Posted successfully');
+      },
       error: errorCB || function(error) {
         console.error('chatterbox: Failed to post messages', error);
       }
@@ -27,7 +29,9 @@ var Parse = {
       type: 'GET',
       data: { order: '-createdAt' },
       contentType: 'application/json',
-      success: successCB,
+      success: successCB || function(success) {
+        console.log('chatterbox: Got messages');
+      },
       error: errorCB || function(error) {
         console.error('chatterbox: Failed to fetch messages', error);
       }

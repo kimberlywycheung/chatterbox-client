@@ -8,24 +8,12 @@ var Messages = {
   //{key: the text in the message}
 
   initialize: (data) => { // should fill messages obj with API data
-    var data = Parse.readAll((data) => {
-      console.log(data);
-
-      for (var i = 0; i < data.length; i++) {
-        Messages._data[i] = data[i];
-      }
-      console.log('msg obj', Messages._data);
-    });
+    for (var i = 0; i < data.length; i++) {
+      Messages._data[i] = data[i];
+    }
   },
 
   createMessage: (message) => {
-      /**
-       * var message = {
-       *  username: 'shawndrost',
-       *  text: 'ahahahahahah',
-       *  roomname: 'thisRoom'
-       * };
-       */
     var obj = {
       username: App.username,
       text: message,
@@ -34,11 +22,7 @@ var Messages = {
 
     Parse.create(obj, () => {console.log('we posted to api!');});
 
-    //var messageText = Object.values(Messages._data.text); //Messages._data
-    // properties: username, msg content, timestamp (created at), room
-    return ;
-
-
+    return;
   },
 
   retrieve: (username) => {
@@ -57,7 +41,6 @@ var Messages = {
 
   // TODO: Define methods which allow you to retrieve from,
   // add to, and generally interact with the messages.
-
 };
 
 /**

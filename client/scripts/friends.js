@@ -9,5 +9,27 @@ var Friends = {
 
   // TODO: Define methods which allow you to add, toggle,
   // and check the friendship status of other users.
+//  { jeffreyzhang: {
+//     kimberly: true;
+//     mo: false
+//     }
+//   }
 
+  //Friends._data.addFriend(friend)
+
+  //Friends._data.toggle(friend)
+    //check if friend is true
+      //delete friend
+    //otherwise
+      //add friend
 };
+
+/**
+ * let people socialize
+ *
+ * methods to add friends and toggle friend status
+ *
+ * need to check if a user is a friend
+ *
+ * toggle according to if user is in some kind of friends category or not
+ */

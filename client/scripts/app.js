@@ -25,6 +25,7 @@ var App = {
     // continually, instead of just once at the start.
 
     //continually --> some kind of time interval
+    //setInterval(App.fetch, 5000);
   },
 
   fetch: function(callback = ()=>{}) {
@@ -32,8 +33,12 @@ var App = {
       // examine the response from the server request:
       console.log(data);
       Messages.initialize(data);
+      Rooms.initialize(data);
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
+      MessagesView.render();
+      RoomsView.render();
+
       callback();
     });
   },
