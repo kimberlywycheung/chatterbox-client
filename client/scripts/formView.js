@@ -16,8 +16,23 @@ var FormView = {
 
     // TODO: Currently, this is all handleSubmit does.
     // Make this function actually send a message to the Parse API.
-  
-    console.log('click!');
+
+    // insert message into parse
+    //message has:
+      //username
+        //App.username
+      //text message
+      //roomname
+      /**
+       * var message = {
+       *  username: 'shawndrost',
+       *  text: 'ahahahahahah',
+       *  roomname: 'thisRoom'
+       * };
+       */
+    //var message = $('form').val();
+    var messageText = $('input[type="text"]').val();
+    Messages.createMessage(messageText);
   },
 
   setStatus: function(active) {
